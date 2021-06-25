@@ -1,0 +1,4 @@
+for f in *.jpg
+do
+ sips -Z $f
+done

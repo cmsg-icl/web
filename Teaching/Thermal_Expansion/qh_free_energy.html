@@ -1,0 +1,77 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta http-equiv="CONTENT-TYPE" content="text/html; charset=iso-8859-1">
+</head>
+<body bgcolor="#ffffff">
+
+<h2>Computing the Free Energy - The harmonic approximation</h2>
+
+
+<p>In this exercise the free energy of MgO will be computed
+within the quasi-harmonic approximation.
+
+<p>In the quasi-harmonic approximation the 
+free energy is computed as a sum over the vibrational modes of the
+infinite crystal - that is over all the <b>bands</b> and 
+<b>k</b>-lables. Numerically this sum is approximated
+as a sum over a finite grid of <b>k</b>-points. 
+The same grid of points used to plot the phonon density of states 
+in the previous exercise.
+
+<p> The number of points used
+in this grid will affect the accuracy of the calculation. The accuracy
+would be perfect for an infinite grid but, unfortunately, the calculation
+would take an infinite amount of CPU time to run !
+
+
+<h3>Selecting a suitable k-space grid</h3>
+
+<p>The compromise between accuracy and CPU time can be established empirically. 
+Here the free energy will be computed for ever increasing sizes of grid 
+and its convergence to the infinite grid value monitored. The convergence
+of the density of states plot in the previous exercise is a useful guide
+for choosing the optimal grid size.
+
+<p>A calculation is performed as follows.
+
+<blockquote>
+
+ <p>Load an MgO structure and bring up the <b>Execute GULP</b> panel.
+ 
+ <p>Click on <b>General opts</b> and select <b>Phonon DOS</b>.
+
+ <p>Shrinking factors along <b>A</b>, <b>B</b> and <b>C</b> will be displayed; 
+   these default to a 1x1x1 grid. 
+
+ <p>Set the <b>Temperature</b> to 300 Kelvin (the pressure will default to 0 GPa)
+
+ <p>Run GULP and examine the log file. Take note of the reported Free Energy.
+</blockquote>
+
+<p>Repeat this calculation for 2x2x2, 3x3x3, 4x4x4 etc. grids.
+
+<h3>Questions</h3>
+
+<ul>
+ <li> How does the free energy vary with grid size ?
+ <li> Which grid size is appropriate for calculations accurate to 1
+ meV, 0.5 meV and 0.1 meV per cell ?
+</ul>
+
+<h3>An opportunity to speculate</h3>
+<ul>
+ <li> Would this optimal grid size for MgO be appropriate for a calculation on;
+ <ol>
+      <li> a similar oxide (eg: CaO) ?
+      <li> a Zeolite (eg: Faujasite) ?
+      <li> a metal (eg: lithium) ?
+ </ol>
+</ul>
+
+
+<p><a href="index.html">index</a>
+   <a href="opt_free_energy.html">Next</a>
+</body>
+</html>

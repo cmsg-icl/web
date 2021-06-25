@@ -1,0 +1,228 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta http-equiv="CONTENT-TYPE" content="text/html; charset=iso-8859-1">
+   <meta name="AUTHOR" content="Nicholas Harrison">
+</head>
+<body bgcolor="#FFFFFF">
+
+<center>
+ <h1>The Free Energy and Thermal Expansion of MgO</h1>
+</center>
+
+
+<hr>
+<h1>
+INTRODUCTION TO STATISTICAL MECHANICS LAB
+</h1>
+
+<hr>
+<h2>Instructions </h2>
+
+<p> The following exercises are to be completed in the computational laboratory.<br>
+The computational lab will be from 10:00 to 17:00 on Monday, Tuesday, Thursday and Friday.<br>
+During these 4 days demonstrators will be available in the computer room to answer all your questions.<br>
+The start date is given in the table below according to the session.<br>
+There is an introductory lecture to the lab in Room 235 at 10:00 on the Start Date of your session.<br>
+
+<br>
+The deadline is at 12:00 of the day indicated in the table below ("Report Deadline").<br>
+Work submitted late will be penalised.<br>
+There's a link set up on Blackboard for submitting a wiki the report for this experiment.<br>
+Blackboard is bb.imperial.ac.uk, and the link is in folder<br>
+3rd Year Chemistry Laboratories (2017 - 2018) / Y3C Third Year Computaqtional Laboratory / Wiki submission.<br>
+
+<br>
+<table border="2" style="width:50%" >
+<tr>
+<td>Session  </td>
+<td> Start Date </td>
+<td> End Date</td>
+<td> Report Deadline </td>
+</tr>
+
+<tr>
+<td>    1    </td>
+<td> 16 / 10 / 2017 </td>
+<td> 20 / 10 / 2017 </td>
+<td> 25 / 10 / 2017 </td>
+</tr>
+
+<tr>
+<td>    2    </td>
+<td> 30 / 10 / 2017 </td>
+<td> 03 / 11 / 2017 </td>
+<td> 08 / 11 / 2017 </td>
+</tr> 
+
+<tr>
+<td>    3    </td>
+<td> 13 / 11 / 2017 </td>
+<td> 17 / 11 / 2017 </td>
+<td> 22 / 11 / 2017 </td>
+</tr> 
+
+<tr>
+<td>    4    </td>
+<td> 27 / 11 / 2017 </td>
+<td> 01 / 12 / 2017 </td>
+<td> 06 / 12 / 2017 </td>
+</tr> 
+
+<tr>
+<td>    5    </td>
+<td> 11 / 12 / 2017 </td>
+<td> 15 / 12 / 2017 </td>
+<td> 20 / 12 / 2017 </td>
+</tr> 
+
+<tr>
+<td>    6    </td>
+<td> 22 / 01 / 2018 </td>
+<td> 26 / 01 / 2018 </td>
+<td> 31 / 01 / 2018 </td>
+</tr>
+
+<tr>
+<td>    7    </td>
+<td> 05 / 02 / 2018 </td>
+<td> 09 / 02 / 2018 </td>
+<td> 14 / 02 / 2018 </td>
+</tr>
+
+<tr>
+<td>    7    </td>
+<td> 19 / 02 / 2018 </td>
+<td> 23 / 02 / 2018 </td>
+<td> 28 / 02 / 2018 </td>
+</tr>
+
+<tr>
+<td>    9    </td>
+<td> 05 / 03 / 2018 </td>
+<td> 09 / 03 / 2018 </td>
+<td> 14 / 03 / 2018 </td>
+</tr>
+
+<tr>
+<td>   10    </td>
+<td> 19 / 03 / 2018 </td>
+<td> 23 / 03 / 2018 </td>
+<td> 28 / 03 / 2018 </td>
+</tr>
+
+
+</table> 
+
+<p> In each exercise there are a number of explicit <i>Questions</i> and
+often also an opportunity to <i>Speculate</i> on the results obtained.
+The final report will be expected to contain answers to these questions
+and, where you feel able, further speculation.
+
+<p> Questions related to this computational experiment can be directed
+to 
+<a href="mailto:nicholas.harrison@ic.ac.uk">Prof. Nicholas Harrison</a>
+and <a href="mailto:giuseppe.mallia@googlemail.com">Dr Giuseppe Mallia</a>.
+
+<hr>
+<h2>Introduction & Background Material</h2>
+
+<p>  The properties of materials (solids, liquids, gasses)  are a
+  statistical average over the many different energy states of the
+  molecules making up the material. 
+  The vibrational free energy of H<sub>2</sub> can be computed 
+  analytically by summing
+  over the harmonic vibrations of the molecule. This cannot be done by
+  hand for a real material containing many atoms.
+
+<p> In this laboratory
+  you will use a simple model of atomic interactions to calculate the
+  energy and vibrations of a crystal of MgO. These vibrational energy
+  levels will then be used to compute the free energy of the crystal
+  and to predict how the material expands when heated. In the last
+  final stage you will go beyond the harmonic (and quasi-harmonic)
+  approximation and expand
+  the crystal using a technique called molecular dynamics -
+  essentially reproducing the actual vibration motions of the
+  atoms. Fortunately the computer will do most of the work !
+
+<p> 
+
+<hr>
+<h2>The Software: RedHat Linux, DLVisualize and GULP</h2>
+
+<p>DLVisualize is a general purpose graphical user interface for
+modelling. It will give you relatively easy access to a number of 
+quantum mechanical and empirical simulation codes. In this case 
+the interface to the molecular modelling code GULP 
+(General Utility Lattice Program)  will be used. 
+
+<p>Linux provides an excellent environment for numerical
+simulations so the first step is to reboot your computer into RedHat 
+Linux.
+
+<p>The environment is not hugely dissimilar to that provided by Microsoft Windows.
+You will find a web browser (Mozilla) on the tool bar and under the Start Menu you
+will find some office tools (Writer, Math etc.) which are similar to those in
+Microsoft Office (Word, Excel etc.) and you may find them useful in plotting your
+data and writing your report.
+
+<h3>Starting DLVisualize</h3>
+
+<ul>
+
+ <li> Open a terminal - right mouse click on the background, select Open Terminal </li>
+
+ <li> In the terminal type the command <b>source  /usr/local/chemistry/progs/thermlab_setup </b> <br>
+      Press enter.<br>
+      This sets up the environment you need to use DLViz </li> 
+
+ <li> type <b>dlv</b> to start DLViz </li>
+
+</ul>
+
+
+<p> There are web sites devoted to both DLV and GULP where you can find
+some additional information.
+
+<p>Further information about 
+   <a href="http://www.cse.clrc.ac.uk/cmg/DLV/">DLV</a>
+<p>Further information about 
+   <a href="https://nanochemistry.curtin.edu.au/gulp/">GULP</a>
+
+
+<hr>
+<h2>Exercises</h2>
+
+<p> The exercises below should be completed in sequence. Although there will be supervisors 
+present during the laboratory the exercises are designed to facilitate self study - there
+are many extensions of the exercises that might occur to you !
+
+<ol>
+
+ <li> <b><a href="initial_energy.html">Calculating the internal energy of an MgO crystal</a></b>
+
+ <li> <b><a href="phonons.html"> Lattice Vibrations - Computing the Phonons</a></b>
+
+ <li> <b><a href="qh_free_energy.html">Calculating the Free Energy in the Harmonic Approximation</a><b>
+
+ <li> <b><a href="opt_free_energy.html">The Thermal Expansion of MgO</a><b>
+
+ <li> <b><a href="md.html">Molecular Dynamics</a></b>
+</ol>
+
+<hr>
+<p><a href="stardlv.html">How to start DLVisualize</a>
+<p><a href="save_a_window.html">How to save a picture for your report</a>
+<hr>
+<p> <b>Additional material.</b>
+<ol>
+<li>
+<a href="http://www.ch.ic.ac.uk/harrison/Teaching/L4_Vibrations.pdf">Vibrations in crystals by Prof. Nicholas Harrison</a><br>
+<li>
+<a href="Introduction.pdf">Introduction</a>
+</ol>
+<hr>
+</body>
+</html>

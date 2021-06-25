@@ -1,0 +1,190 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta http-equiv="CONTENT-TYPE" content="text/html; charset=iso-8859-1">
+   <meta name="AUTHOR" content="Nicholas Harrison">
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<h2>An Initial Calculation on MgO</h2>
+
+<p>In this exercise you will calculate the internal energy of an MgO crystal.
+
+<p><br>Load the structure in MgO.str
+<blockquote>
+ File->Load Model->from File<br>
+ Cick on <b>Browse</b><br>
+ Select <b>MgO.str</b><br>
+ Select <b>OK</b> <br>
+ Select <b>OK</b> <br>
+</blockquote>
+
+<p>A model of MgO should have appeared in the DLV 3DView window.<br>
+This structure should look reasonably familiar it is the rocksalt (NaCl)
+lattice - with oxygen ions (red) and magnesium ions (green) drawn at their
+ionic radii.
+
+<hr>
+<h3>Take a moment to familiarise yourself with DLV ...</h3>
+
+<p> On  main panel the square icons are toggles which control how the
+3D structrue is displayed. A help message is displayed when you pass
+the mouse over each button. At first you are in <i>rotate mode</i> and can
+spin the structure by dragging with the right mouse button. Try
+changing to <i>scale mode</i> and <i>translate mode</i> etc.
+
+<p> Open the <b>Structure Display</b> panel
+<blockquote>
+ Display->Structure
+</blockquote>
+
+<p> Try out the controls on this panel - you can change the size of the atoms, display bonds, multiple unit cells etc etc.
+
+<hr>
+
+<p><br>Give the current model a suitable name. This will be used as the
+label for this model in subsequent GULP simulations.
+<br>&nbsp;
+<blockquote>
+  Edit -> Model -> Name<br>
+  Change "Model_1(MgO.str)" to something suitable; say "MgO".
+</blockquote>
+
+<p><br>Note:
+<blockquote>
+ For the change to take effect you must press Return.<br>
+ You'll see the name of the graphics window change to "DLV 3DView - MgO";
+</blockquote>
+
+<p><br>Now open the Execute GULP panel.
+<blockquote>
+ Calculate -> GULP -> Execute GULP
+</blockquote>
+
+<p>This panel will pop up;
+
+<br>&nbsp; 
+<p><img SRC="Execute1.gif"  BORDER=0 height=328 width=408 >
+<br>&nbsp;
+
+<p>As a first step GULP will be used to compute the energy per unit cell of MgO.
+
+<p>The symmetry of the crystal fixes the positions of the atoms within
+the cell and constrains the cell to be cubic. Thus, one the symmetry
+is given the whole structure is determined by the positions of the two
+atoms in the unit cell and the value of the lattice constant <i>a</i>.
+
+
+<p>In order to compute the energy we must choose a <i>force field</i> 
+or <i>potential model</i> to describe the interactions between the Mg 
+and O ions. 
+
+<blockquote>
+ <p>Click on <b>Select potentials</b>
+ <p>Select <b>ionic.lib</b> on the <b>GULP Potential parameters</b> panel
+ <p>Ensure that the <b>Include Shells</b> option is <i>NOT</i> selected
+</blockquote>
+
+<p> This is a simple force field for MgO - the Mg ion is given a charge of
++2e, the O ion -2e and a simple Buckingham repulsive potential operates
+between the ions. A good article for further reading about such force fields
+is <br>
+T.S.Bush, J.D.Gale, C.R.A.Catlow and P.D. Battle <i> J. Mater
+Chem.</i>, <b>4</b>, 831-837 (1994) <br>
+
+
+<p> Now you can run the calculation
+
+<blockquote>
+ <p>Select <b>Single Point</b> on the <b>Execute GULP</b> panel 
+ <p>Click on <b>Run</b>
+</blockquote>
+
+<p>The <b>Job List</b> panel will open automatically and look something like this;
+
+<br>&nbsp; <br>&nbsp;
+<img SRC="JobList1.gif" BORDER=0 height=528 width=308>
+<br>&nbsp; <br>&nbsp;
+
+<p STYLE="font-weight: medium">Select the job and the status line should
+report "Job has completed" - like this; <br>
+
+<br>&nbsp;<br>&nbsp;
+<img SRC="JobList2.gif" BORDER=0 height=528 width=308>
+<br>&nbsp;<br>&nbsp;
+
+<blockquote>
+ <p>Click on <b>Recover Files</b>.
+</blockquote>
+
+<p>A window will open displaying the output from the GULP calculation 
+(the <b>LogFile</b>). 
+
+<p>It should look something like&nbsp; <a href="MgO_0.txt">MgO_0.txt</a>
+
+<p>Take some time to read through the LogFile.
+
+<hr>
+
+<h2>Notes: </h2>
+
+<p>To describe a crystal structure it is necessary to specify a box
+called the <i>unit cell</i> which is repeated in order to create the 
+<i>periodic lattice</i>. <br>
+
+<blockquote>
+ <p>In the LogFile GULP describes MgO using a <i>primitive unit cell</i>. 
+   The cell vectors of this cell are (in Angstrom);
+
+ <p>0.0000 &nbsp 2.10597 &nbsp 2.10597<br>
+    2.10597 &nbsp 0.0000 &nbsp 2.10597<br>
+    2.10597 &nbsp 2.10597 &nbsp 0.0000<br>
+
+ <p>These vectors form a rhombohedron of side 2.9783 Angstrom and internal angle 60 degrees. 
+
+ <p>The same lattice may also be described by a crystallagraphic
+ (conventional) cell which is a cube of side 4.212  Angstrom (the
+ <i>lattice constant</i>).<br> 
+ You  can see the two cells using the <b>Display->Structure</b> panel.<br>
+ Turn on draw lattice and select either <b>Primitive</b> or
+ <b>Conventional</b> as the cell type.<br> 
+</blockquote>
+
+ <p> The primitive cell of MgO is a rhombohedron and is the smallest cell that an be used to 
+ generate the crystal, the conventional cell has four times the volume but is a cube
+ and better reflects the true symmetry of MgO - most crystallograhic studies will refer to
+ this cell. <br>
+
+<blockquote>
+ <p> Turn on <b>label lattice</b> to see the <b>a</b>, <b>b</b> and
+ <b>c</b> lattice vectors labels.<br> 
+</blockquote>
+
+You can build the lattice of MgO by repeating either cell.
+
+<blockquote>
+ <p> Use the <b>na</b>, <b>nb</b> and <b>nc</b> sliders on the
+ <b>Display->Structure</b> panel to draw multiple cells.<br> 
+</blockquote>
+
+<p>After describing the structure the LogFile reports the interaction potentials 
+that describe the Mg-O bonding (under the headings "Species output"
+and "interatomic potentials"). Then the total energy due to the
+inter-atomic forces (both short range repulsions and electrostatic
+interactions) by summing over the infinite lattice. This energy should
+be -41.07531759 electron-Volts (or eV)  per primitive unit cell; it is the 
+"binding energy" of the crystal - ie: the energy required to pull all of the 
+ions of the crystal to infinite separation.
+
+<hr>
+
+In the next exercise you will compute the vibrations of the lattice -
+which are generally referred to as <i>phonons</i>.
+
+<p>
+   <a href="index.html">index</a>
+   <a href="phonons.html">Next</a>
+</body>
+</html>

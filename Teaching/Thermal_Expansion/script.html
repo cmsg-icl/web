@@ -1,0 +1,130 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta http-equiv="CONTENT-TYPE" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.78 [en] (X11; U; Linux 2.4.9-13 i686) [Netscape]">
+   <meta name="AUTHOR" content="Nicholas Harrison">
+   <meta name="CREATED" content="20020828;10062900">
+   <meta name="CHANGEDBY" content="Nicholas Harrison">
+   <meta name="CHANGED" content="20020828;11184400">
+</head>
+<body LANG="en-US">
+
+<center>
+<h1 STYLE="margin-top: 0.42cm; page-break-after: avoid">
+<font face="Albany, sans-serif"><font size=+1>The Thermal Expansion of
+MgO</font></font></h1></center>
+
+<h2>
+<font face="Albany, sans-serif"><font size=+1>Introduction</font></font></h2>
+
+<div STYLE="margin-top: 0.42cm; page-break-after: avoid"><font face="Albany, sans-serif"><font size=+1>Intro
+to thermal expansion</font></font></div>
+
+<div STYLE="margin-top: 0.42cm; page-break-after: avoid"><font face="Albany, sans-serif"><font size=+1>Simulation
+via quasi harmonic and MD</font></font></div>
+
+<div STYLE="margin-top: 0.42cm; page-break-after: avoid"><font face="Albany, sans-serif"><font size=+1>Interaction
+potentials</font></font></div>
+
+<br>&nbsp;
+<br>&nbsp;
+<h2 STYLE="margin-top: 0.42cm; page-break-after: avoid">
+<font face="Albany, sans-serif"><font size=+1>Using DLVisualize and GULP</font></font></h2>
+
+<div STYLE="margin-top: 0.42cm; page-break-after: avoid"><font face="Albany, sans-serif"><font size=+1>Refer
+to MgO&nbsp;tutorial to show how to load and edit structures using DLV.</font></font></div>
+
+<br>&nbsp;
+<br>&nbsp;
+<h2 STYLE="margin-top: 0.42cm; page-break-after: avoid">
+<font face="Albany, sans-serif"><font size=+1>An Initial Optimisation</font></font></h2>
+
+<p><br>Firstly give the current model a suitable name.
+<br>&nbsp;
+<blockquote>Edit -> Model -> Name
+<br>Change "Model_1(MgO.str)" to something suitable; say "MgO".</blockquote>
+
+<p><br>Note: For the change to take effect you must press Return. You'll
+see the name of the graphics window change to "DLV 3DView MgO";
+<p>Now open the Execute GULP panel.
+<p>Calculate -><font face="StarMath"> </font><font face="Thorndale">Gulp
+-> Execute GULP</font>
+<p>This panel will pop up;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<p><img SRC="Execute1.gif" NAME="Graphic1" BORDER=0 height=328 width=408 align=LEFT>
+<br>&nbsp;
+<br>&nbsp;
+<p>As a first step use GULP to optimize the structure of MgO.
+<p>The symmetry of the crystal fixes the positions of the atoms within
+the cell and constrains the cell to be cubic. Thus there is only one structural
+parameter to optimize - the lattice constant <i>a</i>.
+<p>Select <b>Optimization </b>on the <b>Execute GULP</b> panel and press
+<b>Run.</b>
+
+<p STYLE="font-weight: medium">The <b>Job List</b> panel will open automatically;
+<br>&nbsp;
+<div STYLE="font-weight: medium"></div>&nbsp;
+
+<br>&nbsp;
+
+<p STYLE="font-weight: medium"><img SRC="JobList1.gif" NAME="Graphic2" BORDER=0 height=528 width=308 align=LEFT>
+<br>&nbsp;
+<br>&nbsp;
+
+<p STYLE="font-weight: medium">Select the job and the status line should
+report "Job has completed" - like this;
+<br>&nbsp;
+<div STYLE="font-weight: medium"></div>&nbsp;
+
+<br>&nbsp;
+
+<p STYLE="font-weight: medium"><img SRC="JobList2.gif" NAME="Graphic3" BORDER=0 height=528 width=308 align=LEFT>
+<br>&nbsp;
+<br>&nbsp;
+<p>Click on <b>Recover Files</b> and a window will open displaying the
+output from the GULP calculation (the LogFile). It should look something
+like&nbsp; <a href="MgO_0.out">MgO_0.out</a> .&nbsp; Read through the LogFile.
+<p>Note that:
+<blockquote>GULP describes MgO&nbsp;using the primitive unit cell. Initially
+the cell vectors are (in Angstrom);
+<br>&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.000000&nbsp;&nbsp;&nbsp;
+2.105600&nbsp;&nbsp;&nbsp; 2.105600
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.105600&nbsp;&nbsp;&nbsp;
+0.000000&nbsp;&nbsp;&nbsp; 2.105600
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.105600&nbsp;&nbsp;&nbsp;
+2.105600&nbsp;&nbsp;&nbsp; 0.000000
+<p>This corresponds to a crystallagraphic (conventional) cell with lattice
+constant 2.9778 Angstrom.
+<br>You can see the two cells using <b>Display->Structure</b>. Turn on
+<b>draw lattice </b>and select either <b>Primitive</b> or <b>Conventional</b>
+as the cell type.</blockquote>
+
+<p><br>GULP reports the structure and the interaction potentials which
+describe the Mg-O bonding and then computes the energy for configuration
+1 - the initial geometry. The inital energy is -40.99517 eV per unit cell.
+It then performs a bulk optimisation which reduces the energy to -40.99536
+eV/cell with a final lattice constant of 2.9741 Angstrom. Clearly the initial
+geometry was very close to the minimum energy structure.
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<p>Select <b>General Options </b>and set the temperature to 300 Kelvin
+and the pressure to 0 Gpa.&nbsp;</span>
+<br>&nbsp;
+<div STYLE="font-weight: medium"></div>&nbsp;
+
+<br>&nbsp;
+<p><b>Also</b>
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+</body>
+</html>
