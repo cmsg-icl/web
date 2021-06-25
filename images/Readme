@@ -1,3 +1,6 @@
+
+Web images at about 600pixel  thumbnail people at 225 ish
+
 for f in *.jpg
 do
  sips -Z $f
