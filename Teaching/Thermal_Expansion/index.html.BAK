@@ -1,0 +1,128 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta http-equiv="CONTENT-TYPE" content="text/html; charset=iso-8859-1">
+   <meta name="AUTHOR" content="Nicholas Harrison">
+</head>
+<body bgcolor="#FFFFFF">
+
+<center>
+ <h1>The Free Energy and Thermal Expansion of MgO</h1>
+</center>
+
+<hr>
+<h2>Instructions: Spring 2007</h2>
+
+<p> The following exercises are to be completed in the computational
+laboratory and reports handed in to Miss Lisa Benbow in 442 by 4pm on the
+on the dates indicated. Work submitted late will be penalised. <br>
+Note that during scheduled sessions the computational laboratory is 
+reserved solely for your use. <br>
+
+<p>Group B: 5<sup>th</sup> to 9<sup>th</sup> February; deadline 4pm
+09/02. <br>
+
+<p>Group A: 26<sup>th</sup> February to 2<sup>nd</sup> March; deadline 4pm
+02/03. <br>
+
+<p> In each exercise there are a number of explicit <i>Questions</i> and
+often also an opportunity to <i>Speculate</i> on the results obtained.
+The final report will be expected to contain answers to these questions
+and, where you feel able, further speculation.
+
+<p> Questions related to this computational experiment can be directed
+to 
+<a href="mailto:nicholas.harrison@ic.ac.uk">Prof. Nicholas Harrison</a>.
+
+<hr>
+<h2>Introduction & Background Material</h2>
+
+<p>  The properties of materials (solids, liquids, gasses)  are a
+  statistical average over the many different energy states of the
+  molecules making up the material. In Problem Class 2 you computed
+  the vibrational free energy of H<sub>2</sub> analytically by summing
+  over the harmonic vibrations of the molecule. This cannot be done by
+  hand for a real material containing many atoms. 
+
+<p> In this laboratory
+  you will use a simple model of atomic interactions to calculate the
+  energy and vibrations of a crystal of MgO. These vibrational energy
+  levels will then be used to compute the free energy of the crystal
+  and to predict how the material expands when heated. In the last
+  final stage you will go beyond the harmonic approximation and expand
+  the crystal using a technique called molecular dynamics -
+  essentially reproducing the actual vibration motions of the
+  atoms. Fortunately the computer will do most of the work !
+
+<p>  You should ensure that you are familiar with the contents of the 
+  fourth lecture of the theoretical methods course before attempting
+  the laboratory - 
+  <a href="https://www.ch.ic.ac.uk/harrison/Teaching/L4_Vibrations.pdf">Vibrations in
+  crystals</a><br>
+
+<hr>
+<h2>The Software: RedHat Linux, DLVisualize and GULP</h2>
+
+<p>DLVisualize is a general purpose graphical user interface for
+modelling. It will give you relatively easy access to a number of 
+quantum mechanical and empirical simulation codes. In this case 
+the interface to the molecular modelling code GULP 
+(General Utility Lattice Program)  will be used. 
+
+<p>Linux provides an excellent environment for numerical
+simulations so the first step is to reboot your computer into RedHat 
+Linux.
+
+<p>The environment is not hugely dissimilar to that provided by Microsoft Windows.
+You will find a web browser (Mozilla) on the tool bar and under the Start Menu you
+will find some office tools (Writer, Math etc.) which are similar to those in
+Microsoft Office (Word, Excel etc.) and you may find them useful in plotting your
+data and writing your report.
+
+<h3>Starting DLVisualize</h3>
+
+<ul>
+
+ <li> Open a terminal - right mouse click on the background, select Open Terminal </li>
+
+ <li> In the terminal run the command <b>source /opt/chemistry/crystal/thermlab_setup </b> <br>
+      This sets up the environment you need to use DLViz </li> 
+
+ <li> type <b>dlv</b> to start DLViz </li>
+
+</ul>
+
+
+<p> There are web sites devoted to both DLV and GULP where you can find
+some additional information.
+
+<p>Further information about 
+   <a href="http://www.cse.clrc.ac.uk/cmg/DLV/">DLV</a>
+<p>Further information about 
+   <a href="http://gulp.curtin.edu.au/index.cfm">GULP</a>
+
+
+<hr>
+<h2>Exercises</h2>
+
+<p> The exercises below should be completed in sequence. Although there will be supervisors 
+present during the laboratory the exercises are designed to facilitate self study - there
+are many extensions of the exercises that might occur to you !
+
+<ol>
+
+ <li> <b><a href="initial_energy.html">Calculating the internal energy of an MgO crystal</a></b>
+
+ <li> <b><a href="phonons.html"> Lattice Vibrations - Computing the Phonons</a></b>
+
+ <li> <b><a href="qh_free_energy.html">Calculating the Free Energy in the Harmonic Approximation</a><b>
+
+ <li> <b><a href="opt_free_energy.html">The Thermal Expansion of MgO</a><b>
+
+ <li> <b><a href="md.html">Molecular Dynamics</a></b>
+</ol>
+
+<hr>
+</body>
+</html>

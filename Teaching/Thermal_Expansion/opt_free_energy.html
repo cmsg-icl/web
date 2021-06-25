@@ -1,0 +1,73 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta http-equiv="CONTENT-TYPE" content="text/html; charset=iso-8859-1">
+</head>
+<body bgcolor="#ffffff">
+
+<h2>The Thermal Expansion of MgO</h2>
+
+
+<p>In this exercise the structure of MgO will be optimised with 
+respect to the free energy at a number of temperatures. The free
+energy is computed within the quasi-harmonic approximation.
+
+
+<p>A free energy optimisation is performed as follows.
+
+<blockquote>
+
+ <p>Load an MgO structure and bring up the <b>Execute GULP</b> panel.
+
+ <p>Click on <b>optimisation</b>
+
+ <p>Click on <b>Optimisation opts</b> and select <b>Optimise Gibbs free energy</b>.
+
+ <p>Click on <b>General opts</b> and select <b>Phonon DOS</b>.
+
+ <p>Select suitable shrinking factors for the <b>k</b>-space sampling
+ based on your previous investigations.
+
+ <p>Set the <b>Temperature</b>
+ 
+ <p>Run GULP and examine the log file.
+
+</blockquote>
+
+<p>These calculations will take a little while to complete. GULP is computing
+the internal energy and phonons at a sequence of geometries as it seeks
+to minimise the free energy with respect to the structure.
+
+<p>Vary the temperature from 0K to 1000K in steps of 100K and compute the 
+variation in the free energy and optimal lattice constant by optimising the
+structure at each temperature. 
+
+<h3>Questions</h3>
+
+<ul>
+ <li> Plot the free energy against temperature 
+ <li> Plot the lattice constant against temperature
+ <li> Comment on the shape of these curves.
+ <li> Compute the coefficient of thermal expansion for MgO
+ <li> How does this compare to that measured ? Find a measurement in
+ the literature or on the web - at what temperature was the
+ measurement made ?
+ <li> What are the main approximations in your calculation ?
+</ul>
+
+<h3>An opportunity to speculate ...</h3>
+
+<ul>
+ <li> What is the physical origin of thermal expansion ?
+ <li> As the temperature approaches the melting point of MgO how well 
+      do the phonon modes represent the actual motions of the ions ?
+ <li> In a diatomic molecule with an exactly harmonic potential would
+ you expect the bond length to increase with temperature ? Why does it 
+ increase in the solid when we are using an quasi-harmonic approximation ?
+</ul>
+
+<p><a href="index.html">index</a>
+   <a href="md.html">Next</a>
+</body>
+</html>

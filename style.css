@@ -1,0 +1,56 @@
+body {
+  font-family: ubuntu;
+  color: #000099;
+  margin: 20px;
+  max-width: 1280px;
+  background-color: "#ffffff";
+}
+
+.border {border-width : 15px; border-color: #fffdd0; border-style: outset;} 
+
+a {
+    color: blue;
+}
+
+nav {
+    width: 100%;
+    margin: 20px 0;
+}
+
+nav ul {
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    width: 25%;
+    float: left;
+    font-size: 24px;
+}
+
+nav ul li a:active {
+    background: #fffdd0;
+}
+
+nav ul li:first-child a {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+nav ul li:last-child a {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+nav ul li a {
+    display: block;
+    width: 100%;
+    padding: 8px 0;
+    text-align: center;
+    background: #fffdd0;
+    background: -webkit-gradient(linear,left top, left bottom, color-stop(0%,#fffdd0), color-stop(100%,#fffef2));
+}
+
+

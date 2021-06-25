@@ -1,0 +1,185 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta http-equiv="CONTENT-TYPE" content="text/html; charset=iso-8859-1">
+</head>
+<body bgcolor="#ffffff">
+
+<h2>Molecular Dynamics</h2>
+
+<h3> Some Background </h3>
+
+<p> As discussed in the lectures <i>Molecular Dynamics</i> is a
+technique for allowing a system to evolve in time according to
+Newton's second law F=ma. The atoms simply follow the trajectories
+that they would in reality and we can then compute properties as
+time averages of their behaviour. 
+
+<p> MD is implemented as follows,
+
+<p>First of all an initial configuration and initial velocities need to
+be assigned - here the initial configuration will be that of ideal MgO
+and the velocities will be random but scaled to produce roughly the
+target temperature. Then ...
+
+<ul>
+ <li> Compute the forces on the atoms (F).
+ <li> Compute the accelerations a=F/m
+ <li> Update the velocities: Vnew = Vold + a * dt
+ <li> Update the positions of the atoms: Rnew = Rold + Vnew * dt
+ <li> Repeat until average properties like E and T settle down
+ <li> Once settled measure some properties.
+</ul>
+  
+<p> A crucial parameter here is the timestep <i>dt</i> - this needs to be
+long enough for the calculation to be efficient but short enough for
+all of the possible vibrations of the atoms to be sampled reasonably
+well - typically you want about 10 steps along any given
+vibration. For MgO a time step of 1 femtosecond (10<sup>-15</sup>
+sec.) seems to be adequate.
+
+<p> The other key issue is the <i>size</i> of the system to be
+simulated. In the previous investigations you have seen that MgO can
+be described by a primitive cell containing a single MgO unit (the
+assymetric unit). However, running MD on this cell would be
+meaningless - every cell of the crystal would be moving perfectly in
+phase which is not physical. In fact, using a single unit cell is just
+the same as sampling the phonons at just the <b>k</b>=(0,0,0) point -
+this is the point at which all cells are in phase. 
+
+<p> If we doubled the cell along all three cell vectors to obtain a
+2x2x2 cell we would have a cell containing 8 MgO units within which
+all of the vibrations sampled on a 2x2x2 <b>k</b>-point grid can be 
+represented. The choice of cell size for MD can be established
+empirically simply by running larger and larger cells but MD is much
+more expensive than using the quasi-harmonic approximation so that is not
+practical in this laboratory. As a compromise between accuracy and
+efficiency a cell containing 32 MgO units will be used - this has
+already been created and is stored in <i>MgO_32.str</i>.
+
+<p> Note: The 32 unit MgO cell describes exactly the same static system as
+the primitive cell - it simply allows more flexibility when the system
+is vibrating.
+
+
+<h3> Running MD Simulations </h3>
+
+<blockquote>
+
+ <p> Load the MgO_32.str structure - check that it is simply the same
+ MgO crystal but represented in a larger cell (eg: check Mg-O bond
+ distances by selecting neighbouring Mg and O ions and checking the
+ report in the main window).
+
+ <p> Open the <b>Execute Gulp</b> panel and select <b>Molecular
+ Dynamics</b>.
+
+ <p>Open the <b>MD Opts </b> panel and edit the MD options...
+
+ <p> Set <b> ensemble </b> to <b>NPT</b>   -  in this simulation we fix
+ the number of particles (N), the external pressure (P) and the
+ temperature (T) while allowing the volume of the system (V) to vary.
+
+ <p> Set the <b>Temperature</b> - initially use 300 K
+
+ <p> Set the <b> Time Step </b> = 1.0 femtoseconds
+
+ <p> Set the number of <b> Equilibration steps </b> to 500. 
+
+ <p> <b> Production Steps </b> = 500 ; this is the number of steps
+ run after equilibration is complete.
+
+ <p> Set <b> Sampling steps </b> and <b> Trajectory write steps </b>
+ to 5. These are, the number of time steps over which averages are made
+ and, the number of steps betweem each writing of the geometry to a
+ trajectory file for animations, respectively.
+
+ <p> Make sure that you have selected ionic.lib for the potential model,
+ that the <b>Include Shells</b> option is <i>NOT</i> selected,
+ and that the DOS calculations are turned off under general options.
+ Click <b>Run</b> to start the calculation.
+
+</blockquote> 
+
+<h3> The results </h3>
+
+ <p> You can monitor the progress of the job by selecting it in the
+ job list and recovering files whenever it says that the output file
+ has changed.
+
+
+ <p> Take a look at the Logfile. You will see the start of the MD
+ equilibration when properties begin to be reported at each sampled
+ time step (every 5 in the current job).
+
+<p> At each timestep the <i>instantaneous</i> and <i>Averaged</i>
+values of a number of properties are reported. You will see that the
+cell structure and its volume <i>fluctuate</i> from timestep to
+timestep but as the system settles down (<i>equilibrates</i>) the
+averaged value becomes more stable. A good sign is that the
+temperature becomes reasonably stable at around 300 K - if it doesn't
+then the equations of motion are not being integrated accurately and a
+smaller timestep is needed. 
+
+<p> This is a relatively small cell and so fluctuations are quite
+large however after the system has equilibrated you should be able to
+identify an average cell volume (plus or minus a bit) for the
+temperature.
+
+<p> You can animate the movements of the ions for the production
+steps.
+
+<blockquote>
+
+<p> <b>Display -> Animate -> Sequence </b>
+
+</blockquote>
+
+<p> Note: you can use the Display->structure to alter how the
+structure looks while it is being animated. 
+
+<p> Note: The MD runs take a look time to complete. You can get
+together with other groups to run different temperatures - machines
+can be left running overnight (put a note on the keyboard to ensure
+that the machine isn't rebooted).
+
+<hr>
+
+<h3>Questions</h3>
+
+<ul>
+
+ <li> Replot your data from the quasi-harmonic approximation calculations
+ as,  cell volume per formula unit vs temperature, and add some points
+ from the MD runs at a few suitable temperatures.
+
+ <li> How does the thermal expansion predicted by MD compare to that
+ predicted by the quasi-harmonic approximation ?
+
+ <li> Why do the two methods produce different answers ? - how does the
+ difference depend on temperature ?
+
+</ul>
+
+<h3>An opportunity to speculate</h3>
+<ul>
+
+ <li> From your experience of computing an accurate Free Energy how
+ large a cell should be used to perform reliably MD for MgO ?
+
+ <li> What would happen to the cell volume at high temperature in the
+ quasi-harmonic approximation and in the MD ?
+ 
+
+</ul>
+
+
+
+
+
+
+<p><a href="index.html">index</a>
+
+</body>
+</html>

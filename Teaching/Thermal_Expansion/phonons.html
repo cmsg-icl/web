@@ -1,0 +1,236 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta http-equiv="CONTENT-TYPE" content="text/html; charset=iso-8859-1">
+</head>
+<body bgcolor="#ffffff">
+
+<h2>Calculating the phonon modes of MgO</h2>
+
+
+<p>In this exercise the vibrational modes (phonon modes) of MgO will be computed.
+The phonon modes will be displayed as dispersion curves, 
+a density of states and animated.
+
+<p>In a later exercise the free energy will be computed
+within the harmonic approximation.
+For this an accurate phonon density of states must be computed.
+
+<h3>Computing the phonon dispersion curves</h3>
+
+<p>In order to visualise the phonon modes and understand the variation
+of frequencies with <b>k</b> compute the phonon frequencies along a 
+path in <b>k</b>-space. These are the <i>w<sub>j,k</sub></i> curves
+that will also be discussed in a Lecture - 
+<a href="https://www.ch.ic.ac.uk/harrison/Teaching/L4_Vibrations.pdf">
+Vibrations in crystals</a><br>
+
+<p> The essential point is that <i>every possible vibration</i> of the crystal can be
+labelled with a <b>k</b>-vector which is related to the direction and
+wavelength of the vibration.
+
+<p>The calculation is performed as follows;
+
+<blockquote>
+
+ <p>Load the MgO structure and bring up the <b>Execute GULP</b> panel.
+ 
+ <p>Click on <b>General opts</b> and select <b>Phonon Dispersion</b>.
+
+ <p>Set Npoints to 50
+
+  <p> Ensure that <b> Calculate Phonon Eigenvectors </b> is selected.
+
+</blockquote>
+
+<p> 
+The special points along the conventional path in <b>k</b>-space, 
+W-L-G-W-X-K, are displayed at the bottom of the panel. The phonons will
+be computed at 50 points along this path. Note that the path and the 
+names for the particular end points are simply a widely used convention
+which allows researchers to display phonon frequencies easily - it is
+difficult to display the variation of the frequency over the full 3D
+<b>k</b>-space.
+
+<blockquote>
+
+ <p><b>Run</b> GULP and <b>Recover Files</b>
+
+</blockquote>
+
+<p>A window containing the Log File will pop up. 
+
+<p>In addition a window <b>1D Data Display</b> will pop up.
+
+<p>The phonon dispersion curves  should be available for plotting.
+
+<blockquote>
+ <p> Select <b>GULP phonon dispersion</b> in the <b>1D Data Display</b> panel.
+ <p> Click on the <b>Draw 1D data</b> button
+</blockquote>
+
+<p>The <b>2DView</b> window will pop up and should contain the 
+<i>phonon dispersion curves</i> looking something like this.
+
+
+<br>&nbsp; 
+<p><img SRC="phonon_disp1.gif"  BORDER=0 >
+<br>&nbsp;
+
+<p> At this point you will have developed a keen understanding of why
+many researchers invest in 19 inch monitors - if you close windows
+that you are not currently using it will help to keep the screen
+tidy :-).
+
+<h3>Visualising the Phonons</h3>
+
+
+<blockquote>
+ <p><b>Display -> Animate -> Property</b>
+</blockquote>
+
+<p> The <b>Create Property Animation</b> panel will pop up listing all of
+the phonon modes computed for the dispersion plot. 
+
+<p> Select one of the phonon modes - mode 117 is a good one to start with (the
+mode numbers are in brackets after the frequency and k-point).
+
+<p>Set <b>N frames</b> to, say, 30 and <b>max amplitude</b> to 0.2 and 
+click <b>Apply</b>.
+
+<p> The <b>Animate Model</b> panel should pop up. Set <b>Cycle Options</b>
+to <b>Cycle</b> and click <b>Run</b> to animate the selected phonon.
+DLV will automatically switch to a suitable supercell which wholly
+contains the phonon being animated (ie: a cell in which the vibrating
+atoms repeat once). Mode 117 is at the <b>k</b>-point (0.0, 0.0, 0.0) and
+so can be represented within the primitive unit cell. 
+
+<p> In the 3DView window the atoms begin to vibrate - this is the motion
+associated with the mode you have selected.
+
+<p> Note: DLV scales (normalises) the image every time it is refreshed which
+may cause the animation to jump around a little - you can prevent this by
+turning off the <b>Auto Normalise</b> option on the main control panel.
+
+<p> Note that you can examine the phonons at all of the 50 k-points we
+have computed for the dispersion curve.  All of the possible vibrations 
+of the infinite lattice of Mg and O ions can be computed and visualised 
+in this way - we simply need to compute at enough <b>k</b>-points.
+
+<p> In order to compute, for example, a free energy a sum over <b>all</b>
+of the vibrations of the lattice is required - that means a sum over all
+possible <b>k</b>-points. In the computer this must
+be approximated by a sum over a large but finite number of points on a grid.
+In practical work the question is - how many points are required to obtain
+an accurate answer ?
+
+<p> The <i>density of states</i> is a useful object which summarises the
+dispersion curves - it is an <i>average</i> over all <b>k</b>-points yielding
+the number of vibrational modes at each frequency (the density of modes).
+
+
+<h3>The phonon density of states</h3>
+
+Summing over all of the states (labelled by their k-point) at a
+particular frequency (ie: vibrational  energy) produces a simpler 
+"energy level diagram" for the phonons which is called the 
+<i>the density of states</i>. 
+
+<p>A calculation is performed as follows.
+
+<blockquote>
+ <p>Load an MgO structure and bring up the <b>Execute GULP</b> panel.
+ 
+ <p>Click on <b>General opts</b> and select <b>Phonon DOS.</b>.
+
+ <p>The <i>shrinking factors</i> along the <b>A</b>, <b>B</b> and <b>C</b> directions
+    will be displayed; these simply define the grid of <b>k</b>-points on which the
+    average will be performed and default to a simgle point - a 1x1x1 grid. 
+</blockquote>
+
+<p> The panel should look like this;
+
+<br>&nbsp; 
+<p><img SRC="phonon1.gif"  BORDER=0 >
+<br>&nbsp;
+
+<blockquote>
+ <p>Click on <b>Run GULP</b> and after completion <b>Recover Files</b>
+</blockquote>
+
+<p>A window containing the Log File will pop up. 
+
+<p>In addition a window <b>1D Data Display</b> will pop up.
+
+<p>The phonon density of states  should be available for plotting.
+
+<blockquote>
+ <p> Select <b>GULP phonon Density of States</b> in the <b>1D Data Display</b> panel.
+ <p> Click on the <b>Draw 1D data</b> button
+</blockquote>
+
+<p>The <b>2DView</b> window will pop up and should contain a density
+of states looking something like this.
+
+
+<br>&nbsp; 
+<p><img SRC="phonon_dos1.gif"  BORDER=0 >
+<br>&nbsp;
+
+<p> This is the density of states (DOS) computed from a single
+<b>k</b>-point - not much of an average ! It consists of 4 distinct peaks. 
+
+<p>In order to obtain a smooth curve the phonons must be sampled 
+on a denser grid of <b>k</b>-points.
+
+<p>In order to use more <b>k</b> points rerun the the density
+of states calculation increasing the shrinking factors from
+1x1x1.
+
+<p>Try 2x2x2, 3x3x3, 4x4x4 etc. grids and see how the density
+of states varies.
+
+<hr>
+
+<h3>Questions</h3>
+
+<ul>
+
+ <li> The density of states for 1x1x1 grid was computed for
+      a single <b>k</b>-point. <br>
+      Can you work out which <b>k</b>-point by examining the
+      dispersion curves ? look in the Log File to check. <br>
+
+ <li> How does the density of states vary with grid size ?
+
+ <li> As the grid size increases more and more of the possible vibrations are sampled
+and more features appear - which grid size is the minimum for a reasonable approximation
+to the density of states ?
+
+ <li> How does the density of states computed at this optimal grid size compare
+      to that computed for smaller and larger grids ?
+
+ <li> How is the density of states related to the dispersion curves ?
+
+</ul>
+
+<hr>
+
+<h3>An opportunity to speculate</h3>
+<ul>
+ <li> Would this optimal grid size for MgO be appropriate for a calculation on;
+ <ol>
+      <li> a similar oxide (eg: CaO) ?
+      <li> a Zeolite (eg: Faujasite) ?
+      <li> a metal (eg: lithium) ?
+ </ol>
+</ul>
+
+<hr>
+
+<p><a href="index.html">Index</a>
+   <a href="qh_free_energy.html">Next</a>
+
+</body>
+</html>
